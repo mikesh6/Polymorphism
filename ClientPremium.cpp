@@ -24,7 +24,7 @@ double ClientPremium::obtenirTotalAPayer() const
 {
     
 
-	Usager::obtenirTotalAPayer();
+	
 	double totalAPayer = 0;
 	for (int i = 0; i < panier_.size(); i++) {
 		
@@ -50,8 +50,8 @@ double ClientPremium::obtenirTotalAPayer() const
 void ClientPremium::afficherProfil() const
 {
 
-	Usager::afficherProfil();
-	cout << joursRestants_;
+	Client::afficherProfil();
+	cout << "         Jours restants " << joursRestants_ << endl;
 
 }
 

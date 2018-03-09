@@ -27,6 +27,8 @@ Client *ProduitAuxEncheres::obtenirEncherisseur() const
 
 void ProduitAuxEncheres::afficher() const
 {
+
+	Produit::afficher();
     // TODO
 }
 
@@ -39,6 +41,12 @@ void ProduitAuxEncheres::mettreAJourEnchere(Client *encherisseur, double nouveau
 {
     // TODO
 
+	
 	modifierPrix(nouveauPrix);
 
+}
+
+void ProduitAuxEncheres::modifierEncherisseur(Client * encherisseur)
+{
+	encherisseur_ = encherisseur;
 }

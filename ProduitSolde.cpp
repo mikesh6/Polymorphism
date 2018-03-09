@@ -13,12 +13,16 @@ ProduitSolde::ProduitSolde(Fournisseur *fournisseur, const string &nom,
 {
 }
 
-double ProduitSolde::obtenirPrix() const
-{
-    // TODO
+double ProduitSolde::obtenirPrix() const{
+   
+	return prix_;
 }
 
 void ProduitSolde::afficher() const
 {
     // TODO
+
+	Produit::afficher();	
+	cout << "Rabais :" <<pourcentageRabais_ << "%" << endl;
+
 }

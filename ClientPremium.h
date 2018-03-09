@@ -13,8 +13,8 @@ class ClientPremium : public Client
     ClientPremium(const string &nom, const string &prenom, int identifiant, const string &codePostal, unsigned int codeClient, unsigned int joursRestants = 0);
 
     unsigned int obtenirJoursRestants() const;
-    double obtenirTotalAPayer() const;
-    void afficherProfil() const;
+    virtual double obtenirTotalAPayer() const;
+    virtual void afficherProfil() const;
 
     void modifierJoursRestants(unsigned int joursRestants);
 

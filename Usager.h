@@ -16,7 +16,7 @@ class Usager
     string obtenirPrenom() const;
     int obtenirIdentifiant() const;
     string obtenirCodePostal() const;
-    virtual double obtenirTotalAPayer() const;
+	virtual double obtenirTotalAPayer() const;
     virtual void afficherProfil() const; 
 
     void modifierNom(const string &nom);
@@ -24,8 +24,8 @@ class Usager
     void modifierIdentifiant(int identifiant);
     void modifierCodePostal(const string &codePostal);
     virtual void reinitialiser();
-    void ajouterProduit(Produit *produit);
-    void enleverProduit(Produit *produit);
+	virtual void ajouterProduit(Produit *produit) = 0;
+	virtual void enleverProduit(Produit *produit) = 0; // pure virtual method, abstract class
 
   private:
     string nom_;

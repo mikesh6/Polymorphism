@@ -32,8 +32,9 @@ string Usager::obtenirCodePostal() const
 
 double Usager::obtenirTotalAPayer() const
 {
-    // TODO
-
+	cout << "Calulcating $$$" << endl;
+	return  0 ; // what do we return ?
+	
 }
 
 void Usager::afficherProfil() const
@@ -41,20 +42,17 @@ void Usager::afficherProfil() const
     // need to be tested
 	// print the attributets that are general 
 	// to all types of users
-	// and call the afficherProfil() for 
+	// and call the afficherProfil() for child
 	// to print the different parameters
 
 
-	cout << nom_;
-	cout << prenom_;
-	cout << identifiant_;
-	cout << codePostal_;
-
 	
-
+	cout << nom_ << "   "  << prenom_ << "   ("  << identifiant_ << ")   " << endl;
+	cout << "               Code postal : " << codePostal_ << endl;	
 	
 
 
+	
 }
 
 void Usager::modifierNom(const string &nom)
@@ -80,6 +78,15 @@ void Usager::modifierCodePostal(const string &codePostal)
 void Usager::reinitialiser()
 {
 	// empty the panier of client
+
 	
 
+}
+
+void Usager::ajouterProduit(Produit * produit)
+{
+}
+
+void Usager::enleverProduit(Produit * produit)
+{
 }

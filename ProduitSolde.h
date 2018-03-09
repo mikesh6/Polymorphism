@@ -8,7 +8,10 @@
 
 using namespace std;
 
-class ProduitSolde : public Produit, public Solde
+//added the word virtual for multiple heritage
+
+
+class ProduitSolde :virtual public Produit, virtual public Solde
 {
   public:
     ProduitSolde(int pourcentageRabais = 0);

@@ -51,9 +51,12 @@ void Client::afficherPanier() const
 void Client::afficherProfil() const
 {
     // TODO
-	Usager::afficherProfil(); // 
-	cout << codeClient_ << endl;
-	afficherPanier();
+	
+	Usager::afficherProfil();
+
+	
+	cout << "            Code client  " << codeClient_ << endl;
+	cout << "             Panier " << panier_.size() << endl;;
 
 
 }
@@ -86,7 +89,21 @@ void Client::ajouterProduit(Produit *produit)
 
 void Client::reinitialiser()
 {
-    	
+ 
+	/*
+	for (int i = 0; i < panier_.size(); i++) {
+
+		if (typeid(panier_[i]) == ProduitAuxEnchere) {
+
+			panier_[i]->modifierFournisseur(nullptr);
+			panier_[i]->modifierPrix() // how to put it back to the old price
+		}
+
+	}
+
+	*/
+
+
 	panier_.clear();
 	
 	// if procuts aux encheres 

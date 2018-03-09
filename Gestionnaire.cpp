@@ -10,10 +10,15 @@ void Gestionnaire::afficherLesProfils() const
     // TODO
 	// est ce que on doit  defrenecer le vecteur  ?
 	 
-	for (int i = 0; i < usagers_.size(); i++) {	 
+	cout << "Profiles : " << endl;
+	
+for (int i = 0; i < usagers_.size(); i++) {	 
+		
+		usagers_[i]->afficherProfil();
+			
+}
 
-			cout << "Usagers " << usagers_[i];
-		}
+	
 }
 
 double Gestionnaire::obtenirChiffreAffaires() const
@@ -42,11 +47,11 @@ void Gestionnaire::ajouterUsager(Usager *usager)
 	// to be tested
 
 
-	for (int i = 0; i < usagers_.size(); i++)
-	{
-		if (this->usagers_[i] != usager)
-			usagers_.push_back(new Usager(*usager));
-	}
+	//for (int i = 0; i < usagers_.size(); i++)
+	//{
+		//if (this->usagers_[i] != usager)
+	usagers_.push_back(usager);
+	//}
 	
 }
 
@@ -73,13 +78,24 @@ void Gestionnaire::encherir(Client *client, ProduitAuxEncheres *produit, double 
 	// prouit aux encher inherits from produit
 	// client has products 
 	// client is a user
-	// i didnt udnerstand anything, we just had to use 
-	// this methods
+	// fixed 15
+	// crashed 14 ?? 
+
+
+
 
 	
-	if ( montant > produit->obtenirPrix()) {
+	if ( montant > produit->obtenirPrixInitial()) {
 		
+		client->ajouterProduit(produit);
 		produit->mettreAJourEnchere(client, montant);
+	}
+
+	else {
+
+		client->enleverProduit(produit);
+	
+
 	}
 
 

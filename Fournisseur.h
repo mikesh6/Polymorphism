@@ -16,7 +16,7 @@ class Fournisseur : public Usager
 
     vector<Produit *> obtenirCatalogue() const;
     void afficherCatalogue() const;
-    void afficherProfil() const;
+	virtual void afficherProfil() const;
 
     void reinitialiser();
 	
