@@ -40,9 +40,20 @@ void ProduitAuxEncheres::modifierPrixInitial(double prixInitial)
 void ProduitAuxEncheres::mettreAJourEnchere(Client *encherisseur, double nouveauPrix)
 {
     // TODO
+	if (this->obtenirEncherisseur() != encherisseur) {
 
 	
-	modifierPrix(nouveauPrix);
+
+		//this->encherisseur_->enleverProduit(encherisseur_);
+		this->modifierPrix(nouveauPrix);
+		this->modifierEncherisseur(encherisseur);	
+		encherisseur->ajouterProduit(this);
+		
+
+	}
+
+
+		
 
 }
 

@@ -1,5 +1,6 @@
 #include "Client.h"
 #include <iostream>
+#include "ProduitAuxEncheres.h"
 
 Client::Client(unsigned int codeClient)
     : Usager(),
@@ -29,8 +30,11 @@ double Client::obtenirTotalAPayer() const
 
     // TODO
 
-	Usager::obtenirTotalAPayer(); // do we need to call the namespace Usager  ?? 
+	
+
+
 	double totalAPayer = 0;
+
 	for (int i = 0; i < panier_.size(); i++) {
 		totalAPayer += panier_[i]->obtenirPrix();
 	}
@@ -84,34 +88,42 @@ void Client::ajouterProduit(Produit *produit)
     for (unsigned int i = 0; i < panier_.size(); i++)
         if (panier_[i] == produit)
             return;
+
     panier_.push_back(produit);
 }
 
 void Client::reinitialiser()
 {
  
-	/*
+	
 	for (int i = 0; i < panier_.size(); i++) {
 
-		if (typeid(panier_[i]) == ProduitAuxEnchere) {
+		
+		
+		ProduitAuxEncheres* pa = dynamic_cast<ProduitAuxEncheres*>(panier_[i]);
 
+		if (pa == nullptr)
+		{
+
+			
 			panier_[i]->modifierFournisseur(nullptr);
-			panier_[i]->modifierPrix() // how to put it back to the old price
+		
+
+
 		}
+
+		else {
+
+		pa->modifierEncherisseur(nullptr);
+		pa->modifierPrix(pa->obtenirPrixInitial());
+		
+		}
+
+		
+		
 
 	}
 
-	*/
-
-
-	panier_.clear();
 	
-	// if procuts aux encheres 
-	// put back to original price
-	// put back owner at nullptr
-
-	// type id 
-
-
-
+		
 }

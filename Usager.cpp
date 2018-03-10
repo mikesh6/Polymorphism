@@ -1,4 +1,5 @@
 ﻿#include "Usager.h"
+#include "Client.h"
 #include <iostream>
 
 Usager::Usager(const string &nom, const string &prenom, int identifiant,
@@ -30,11 +31,12 @@ string Usager::obtenirCodePostal() const
     return codePostal_;
 }
 
-double Usager::obtenirTotalAPayer() const
+double Usager::obtenirTotalAPayer() 
 {
-	cout << "Calulcating $$$" << endl;
-	return  0 ; // what do we return ?
-	
+	double somme = 0.0;
+	//Usager* pa = dynamic_cast<Client*>(this);
+	//somme = pa->obtenirTotalAPayer();
+	return somme;
 }
 
 void Usager::afficherProfil() const
@@ -78,6 +80,7 @@ void Usager::modifierCodePostal(const string &codePostal)
 void Usager::reinitialiser()
 {
 	// empty the panier of client
+	
 
 	
 

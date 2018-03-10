@@ -16,14 +16,14 @@ class Usager
     string obtenirPrenom() const;
     int obtenirIdentifiant() const;
     string obtenirCodePostal() const;
-	virtual double obtenirTotalAPayer() const;
+	virtual double obtenirTotalAPayer();
     virtual void afficherProfil() const; 
 
     void modifierNom(const string &nom);
     void modifierPrenom(const string &prenom);
     void modifierIdentifiant(int identifiant);
     void modifierCodePostal(const string &codePostal);
-    virtual void reinitialiser();
+	virtual void reinitialiser() = 0;
 	virtual void ajouterProduit(Produit *produit) = 0;
 	virtual void enleverProduit(Produit *produit) = 0; // pure virtual method, abstract class
 

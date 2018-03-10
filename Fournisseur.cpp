@@ -48,13 +48,7 @@ void Fournisseur::afficherProfil() const
 
 void Fournisseur::reinitialiser()
 {
-    // TODO
-
-	
-	for (unsigned int i = 0; i < catalogue_.size(); i++)
-		catalogue_[i]->modifierFournisseur(nullptr);
-	
-
+    // TODO		
 	catalogue_.clear();
 }
 

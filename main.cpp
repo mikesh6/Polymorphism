@@ -190,7 +190,7 @@ int main()
     julie.ajouterProduit(&stylo); // produit normal
     julie.ajouterProduit(&nem);   // produit soldé
     tests.push_back(julie.obtenirPanier().size() == 3);
-
+	
 
 	//23
     // ajouter le produit au fournisseur doit l'ajouter au catalogue
@@ -289,6 +289,7 @@ int main()
     samuel.ajouterProduit(&chaussures);
     samuel.ajouterProduit(&montre);
     tests.push_back(samuel.obtenirTotalAPayer() == 0.0);
+
     // le chiffre d'affaires doit additionner les totaux à payer
     tests.push_back(poly.obtenirChiffreAffaires() == 110.0 + 21095.0);
     
@@ -318,5 +319,11 @@ int main()
 			
     }		
 
+
+	int x = 0;
+	cin >> x;
+
+
+	
 	return 0;
 }

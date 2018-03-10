@@ -28,7 +28,7 @@ double Gestionnaire::obtenirChiffreAffaires() const
 	// virtual, therefore, the base class knows where to find 
 	//this methods in the dervied classes 
 	// the method has been defined for both classes (indicate polymorphism)
-	double totalAPayer = 0;
+	double totalAPayer = 0.0;
 
 	for(int i =0; i < usagers_.size(); i++){
 		totalAPayer += usagers_[i]->obtenirTotalAPayer();
@@ -82,21 +82,13 @@ void Gestionnaire::encherir(Client *client, ProduitAuxEncheres *produit, double 
 	// crashed 14 ?? 
 
 
-
-
-	
-	if ( montant > produit->obtenirPrixInitial()) {
 		
-		client->ajouterProduit(produit);
+	if ( montant > produit->obtenirPrix()) {
+		
 		produit->mettreAJourEnchere(client, montant);
 	}
 
-	else {
-
-		client->enleverProduit(produit);
 	
-
-	}
 
 
 
